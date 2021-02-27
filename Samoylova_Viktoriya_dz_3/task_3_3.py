@@ -11,6 +11,7 @@ adjectives = ["веселый", "яркий", "зеленый", "утопичн�
 
 
 def some_jokes(n, repeat=False):
+   """jokes are jokes, and python is very difficult for me"""
    list_of_jokes = []
    for i in range(0, n):
       if repeat and len(nouns) == 0:
