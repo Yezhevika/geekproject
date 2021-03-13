@@ -11,12 +11,12 @@ from json import dump
 from itertools import zip_longest
 
 with open("users.csv", "r", encoding="utf-8") as users:
-    with open("hobbies.csv", "r", encoding="utf-8") as hobby:
+    with open("hobby.csv", "r", encoding="utf-8") as hobby:
 
         all_list = zip_longest((" ".join(us.split(",")) for us in users), hobby, fillvalue=None)
-        my_dict = {str(el[0]).strip(): (el[1]).strip() for el in all_list}
+        my_dict = {str(el[0]).strip(): (el[1].strip()) for el in all_list}
 
-        with open(dict_n_h.json, "w", encoding="utf-8") as f:
+        with open('dict_n_h.json', "w", encoding="utf-8") as f:
             if "None" in my_dict:
                 print(1)
             else:
