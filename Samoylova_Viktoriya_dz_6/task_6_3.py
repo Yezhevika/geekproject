@@ -16,9 +16,9 @@ with open("users.csv", "r", encoding="utf-8") as users:
         all_list = zip_longest((" ".join(us.split(",")) for us in users), hobby, fillvalue=None)
         my_dict = {str(el[0]).strip(): (el[1].strip()) for el in all_list}
 
-        with open('dict_n_h.json', "w", encoding="utf-8") as f:
+        with open('dict_n_h.json', 'w', encoding='utf-8') as f:
             if "None" in my_dict:
-                print(1)
+                exit(1)
             else:
                 dump(my_dict, f, ensure_ascii=False, indent=4)
                 print(my_dict)
