@@ -62,23 +62,37 @@
 # show_stat(copy2(src, 'new_data/summary_clone_2.txt'))
 
 # рекурсивный обход папок
-import os
-from collections import defaultdict
-from os.path import relpath
+# import os
+# from collections import defaultdict
+# from os.path import relpath
+#
+# import django
+#
+# root_dir = django.__path__[0]
+# django_files = defaultdict(list)
+# for root, dirs, files in os.walk(root_dir):
+#    for file in files:
+#        ext = file.rsplit('.', maxsplit=1)[-1].lower()
+#        rel_path = relpath(os.path.join(root, file), root_dir)
+#        django_files[ext].append(rel_path)
+#
+# for ext, files in sorted(django_files.items(),
+#                         key=lambda x: len(x[1]), reverse=True):
+#    print(f'{ext}: {len(files)}')
+#
+# print('\nPY FILES')
+# print(*sorted(django_files['py'])[:10], sep='\n')
 
-import django
+# Обработка исключительных ситуаций в Python
+# Блок try...except
+# f_path = 'new_one.txt'
+# try:
+#    with open(f_path, 'r', encoding='utf-8') as f:
+#        content = f.read()
+#    print(content)
+# except (FileNotFoundError, EOFError) as e:
+#    print(f'concrete error: {e}')
+# except Exception as e:
+#    print(f'global error: {e}')
 
-root_dir = django.__path__[0]
-django_files = defaultdict(list)
-for root, dirs, files in os.walk(root_dir):
-   for file in files:
-       ext = file.rsplit('.', maxsplit=1)[-1].lower()
-       rel_path = relpath(os.path.join(root, file), root_dir)
-       django_files[ext].append(rel_path)
-
-for ext, files in sorted(django_files.items(),
-                        key=lambda x: len(x[1]), reverse=True):
-   print(f'{ext}: {len(files)}')
-
-print('\nPY FILES')
-print(*sorted(django_files['py'])[:10], sep='\n')
+# Встроенные классы-исключения
